@@ -42,6 +42,7 @@ const showNews = (data) => {
         readMore.textContent = "Read more";
         readMore.href = source.url;
         readMore.target = "_blank";
+        panel.appendChild(readMore)
         
 
         main.appendChild(panel)
