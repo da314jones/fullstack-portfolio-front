@@ -31,6 +31,38 @@ document.addEventListener("DOMContentLoaded", function() {
         })
 });
  
+//event listener for form
+document.getElementById("queryForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const query = document.getElementById("queryInput").value;
+    const sources = document.getElementById("sourcesInput").value;
+    const language = document.getElementById("languageInput").value;
+
+    //query parameters
+    const queryParameters = {
+        apiKey: "1681be04f001473c982be84269c6cec3",
+        q: query,
+        sources: sources,
+        language: language,
+        sortBy: "publishedAt",
+        pageSize: 20,
+        page: 1,
+    };
+
+    // create url
+    const queryUrl = createQueryUrl(queryParameters);
+
+    //fetch query data from api
+    fetch(queryUrl)
+    .then(response => response.json())
+    .then(data => {
+        showResults(data.articles);
+    })
+    .catch(error => {
+        console.error(error);
+    })
+});
 
 const showNews = (data) => {
     main.innerHTML = "";
@@ -43,7 +75,11 @@ const showNews = (data) => {
         category.textContent = source.category;
         panel.appendChild(category);
 
-        const name = document.createElement("h2");
+        const country = document.createElement("h2");
+        country.textContent = source.country;
+        panel.appendChild(country);
+
+        const name = document.createElement("h3");
         name.textContent = source.name;
         panel.appendChild(name);
 
