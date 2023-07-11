@@ -3,13 +3,25 @@
 const NEWSAPI_URL = "https://newsapi.org/v2/top-headlines/sources?apiKey=1681be04f001473c982be84269c6cec3";
 
 //locate button and 
-const button = document.querySelector("button");
+// const button = document.querySelector("button");
 const main = document.querySelector("main");
 
 //fetch and catch eventListener
-button.addEventListener("click", (e) => {
-    e.preventDefault();
-    fetch(NEWSAPI_URL)
+// button.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     fetch(`${NEWSAPI_URL}`)
+//         .then((response) => response.json())
+//         .then((data) => {
+//             showNews(data);
+//         })
+//         .catch((err) => {
+//             showError(err);
+//         })
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("gey Dom Loaded")
+    fetch(`${NEWSAPI_URL}`)
         .then((response) => response.json())
         .then((data) => {
             showNews(data);
@@ -18,6 +30,7 @@ button.addEventListener("click", (e) => {
             showError(err);
         })
 });
+ 
 
 const showNews = (data) => {
     main.innerHTML = "";
@@ -50,7 +63,7 @@ const showNews = (data) => {
 
 const openInSameTab = (e) => {
     e.preventDefault();
-    window.location.href = e.target.href;
+    window.open(e.target.href, "_blank")
 };
 
 const showError = (err) => {
