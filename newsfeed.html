@@ -6,18 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
     <link rel="stylesheet" href="newsfeed.css" />
-    <script defer src="newsfeed.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>De News</h1>
+        <h1>De News</h1>
     </header>
     <section class="centered">
-      <form>
-        <button type="submit">Get News</button>
-      </form>
+        <form>
+            <button type="submit">Get News</button>
+        </form>
     </section>
     <main class="centered">
-</main>
+    </main>
+    <p>
+        Click the button to open <br />
+        <b style="color:green; font-size:2rem">
+            geeksforgeeks.org
+        </b>
+        <br />
+        in same window & same tab <br />
+    </p>
+    <button onclick="SameTab()">
+        Open using window.location.replace()
+    </button>
+    <script>
+        function openInSameTab() {
+            event.preventDefault();
+            windows.location.href = event.target.href;
+        }
+    </script>
+  <script defer src="newsfeed.js"></script>
   </body>
 </html>
+
+
+
+
+  
+<body>
+    
+</body>
