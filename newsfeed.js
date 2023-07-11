@@ -41,13 +41,18 @@ const showNews = (data) => {
         const readMore = document.createElement("a");
         readMore.textContent = "Read more";
         readMore.href = source.url;
-        readMore.target = "_blank";
+        readMore.addEventListener("click", openInSameTab);
         panel.appendChild(readMore)
         
-
         main.appendChild(panel)
     })
 }
+
+const openInSameTab = (e) => {
+    e.preventDefault();
+    window.location.href = e.target.href;
+};
+
 const showError = (err) => {
     main.innerHTML = `
     <section class="error">
