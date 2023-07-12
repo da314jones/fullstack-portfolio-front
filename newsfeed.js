@@ -128,3 +128,10 @@ document.getElementById("main").addEventListener("click", function(e) {
         document.getElementById("return-to-page-message").style.display = "block"
     }
 });
+
+window.addEventListener("resize", function() {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(function() {
+        location.reload();
+    }, 500);
+})
