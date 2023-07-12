@@ -9,18 +9,6 @@ const createQueryUrl = (params => {
     const queryString = new URLSearchParams(params).toString();
     return `${NEWSAPI_URL}&${queryString}`;
 })
-//fetch and catch eventListener
-// button.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     fetch(`${NEWSAPI_URL}`)
-//         .then((response) => response.json())
-//         .then((data) => {
-//             showNews(data);
-//         })
-//         .catch((err) => {
-//             showError(err);
-//         })
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Dom Loaded")

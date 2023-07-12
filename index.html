@@ -7,10 +7,11 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="newsfeed.css" />
 </head>
-<body>
-    <header>
-        <h1>De News</h1>
+<body class="parent">
+    <header class="div1">
+        <h1>Your News</h1>
     </header>
+    <div class="div2">
     <form action="queryForm" id="queryForm">
       <input type="text" name="categoryInput" id="categoryInput" placeholder="Category">
       <input type="text" name="countryInput" id="countryInput" placeholder="Country">
@@ -25,9 +26,10 @@
         <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
       <input type="submit" value="Search">
     </form>
+  </div><br>
     <section class="centered">
     </section>
-    <main id="main" class="centered">
+    <main id="main">
     </main>
   <script defer src="newsfeed.js"></script>
   </body>
