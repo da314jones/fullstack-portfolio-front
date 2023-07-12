@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-    <link rel="stylesheet" href="newsfeed.css" />
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body class="parent">
     <header class="div1">
         <h1>Your News</h1>
     </header>
-    <div class="div2">
-    <form action="queryForm" id="queryForm">
-      <input type="text" name="categoryInput" id="categoryInput" placeholder="Category">
-      <input type="text" name="countryInput" id="countryInput" placeholder="Country">
-      <label for="languageInput">
-        <select id="languageInput">
-          <option value="">All</option>
-          <option value="ar">Arabic</option>
-          <option value="de">German</option>
-          <option value="en">English</option>
-          <option value="es">Spanish</option>
-        </select>
-        <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
-      <input type="submit" value="Search">
-    </form>
-  </div><br>
     <section class="centered">
     </section>
+    <br>
     <main id="main">
+        <br>
+        <br>
+        <form id="loginForm"><br>
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="password" placeholder="Password">
+            <input type="submit" value="Login">
+            <br>
+            <div id="loadingMessage" style="display: none;">Loading...</div>
+        </form>
+        <br>
+        <div id="return-to-page-message"></div>
     </main>
-  <script defer src="newsfeed.js"></script>
-  </body>
+    <script src="login.js"></script>
+
+</body>
+
 </html>

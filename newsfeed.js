@@ -79,7 +79,7 @@ const showNews = (sources) => {
         country.textContent = source.country.toUpperCase();
         panel.appendChild(country);
 
-        const language = document.createElement("p");
+        const language = document.createElement("span");
         language.textContent = source.language.toUpperCase();
         panel.appendChild(language);
 
@@ -105,3 +105,25 @@ const showError = (err) => {
     <p class="message">${err}</p>
     </section>`;
 }
+
+window.addEventListener("scroll", function() {
+    var navLink = document.getElementById("scrollToTopLink");
+    if (window.scrollY > 200) {
+        navLink.style.display = "block";
+    } else {
+        navLink.style.display = "none";
+    }
+});
+
+document.getElementById("scrollToTopLink").addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: "smooth" });
+});
+
+document.getElementById("main").addEventListener("click", function(e) {
+    if (e.target.tagName.toLowerCase() ==="a") {
+        e.preventDefault();
+
+        document.getElementById("return-to-page-message").style.display = "block"
+    }
+});
