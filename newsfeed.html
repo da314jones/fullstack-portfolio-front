@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-    <link rel="stylesheet" href="newsfeed.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>portfolio</title>
+  <link rel="stylesheet" href="newsfeed.css" />
 </head>
+
 <body class="parent">
-    <header class="div1">
-        <h1>News? anyWHERE</h1>
-    </header>
-    <section class="centered">
-    </section>
-    <div class="div2">
+  <header class="div1">
+    <h1>News? anyWHERE</h1>
+  </header>
+  <section class="centered">
+  </section>
+  <div class="div2">
     <form action="queryForm" id="queryForm">
       <a href="#" class="nav-link" id="scrollToTopLink">Top</a>
       <button onclick="window.location.href='index.html'">Login</button>
@@ -28,12 +30,16 @@
           <option value="es">Spanish</option>
         </select>
         <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
-      <input type="submit" value="Search">
+        <input type="submit" value="Search">
     </form>
-  </div><br>
+  </div>
+  <br>
+  <div class="padding">
     <main id="main">
       <div id="return-to-page-message"></div>
     </main>
+  </div>
   <script defer src="newsfeed.js"></script>
-  </body>
+</body>
+
 </html>
