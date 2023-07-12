@@ -1,9 +1,6 @@
 
-//variable for api
 const NEWSAPI_URL = "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
 const API_KEY = "a9c241399e2d4b609fac5b8b2b293684"
-//locate button and 
-// const button = document.querySelector("button");
 const main = document.querySelector("main");
 const createQueryUrl = (params => {
     const queryString = new URLSearchParams(params).toString();
@@ -15,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchNews();
 });
 
-//event listener for form
 document.getElementById("queryForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -64,29 +60,34 @@ const showNews = (sources) => {
         panel.classList.add("panel");
 
         const name = document.createElement("h2");
+        name.classList.add("panel-title");
         name.textContent = source.name;
         panel.appendChild(name);
 
         const description = document.createElement("p");
+        description.classList.add("panel-description")
         description.textContent = source.description;
         panel.appendChild(description);
 
         const category = document.createElement("h3");
+        category.classList.add("panel-category");
         category.textContent = source.category.toUpperCase();
         panel.appendChild(category);
 
         const country = document.createElement("h3");
+        country.classList.add("panel-country");
         country.textContent = source.country.toUpperCase();
         panel.appendChild(country);
 
         const language = document.createElement("span");
+        language.classList.add("panel-language");
         language.textContent = source.language.toUpperCase();
         panel.appendChild(language);
 
         const readMore = document.createElement("a");
+        readMore.classList.add("panel-link");
         readMore.textContent = "Read more";
         readMore.href = source.url;
-        // readMore.addEventListener("click", openInSameTab);
         panel.appendChild(readMore)
 
         main.appendChild(panel)
