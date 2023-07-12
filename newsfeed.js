@@ -1,7 +1,7 @@
 
 //variable for api
 const NEWSAPI_URL = "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
-const API = a9c241399e2d4b609fac5b8b2b293684
+const API = "a9c241399e2d4b609fac5b8b2b293684"
 //locate button and 
 // const button = document.querySelector("button");
 const main = document.querySelector("main");
@@ -52,25 +52,25 @@ document.getElementById("queryForm").addEventListener("submit", function (e) {
 //create url to encoding 
 const createQueryUrl = (params) => {
     const queryString = Object.entries(params).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
-    return `${NEWSAPI_URL}&${queryString}`;
+    return `${NEWSAPI_URL}?${queryString}`;
 }
 
 const fetchNews = (url = NEWSAPI_URL) => {
     fetch(url)
-        .then((response) => response.json)
+        .then((response) => response.json())
         .then((data) => {
             console.log(data)
-            showNews(data.articles);
+            showNews(data.sources);
             document.getElementById("queryForm").reset();
         })
         .catch(error => {
-            console.error(error);
+            showError(error);
         })
 }
 
 // modify for user query
 const showNews = (sources) => {
-    console.log(data)
+    console.log(sources)
     main.innerHTML = "";
 
     sources.forEach((source) => {
@@ -79,7 +79,7 @@ const showNews = (sources) => {
 
         const name = document.createElement("h2");
         name.textContent = source.name;
-        panel.appendChild(title);
+        panel.appendChild(name);
 
         const description = document.createElement("p");
         description.textContent = source.description;
