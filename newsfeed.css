@@ -153,6 +153,7 @@ span {
 }
 
 #return-to-page-Message {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -377,13 +378,11 @@ span {
         align-items: center;
         height: auto;
         margin-left: auto;
-        /* Update margin-left to auto */
         margin-right: auto;
-        /* Update margin-right to auto */
         text-align: center;
         right: 0;
         top: 0;
         white-space: normal;
-        /* Update white-space to normal */
     }
 }
+
