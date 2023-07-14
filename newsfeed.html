@@ -11,19 +11,19 @@
 
 <body class="parent">
   <header class="div1">
-    <h1>News? ...anyWHERE!</h1>
+    <img src="./assets/jones_journal.png" alt="Jones Journal Logo">
   </header>
-  <section class="centered">
-  </section>
   <br>
   <div class="div2">
+    <button class="round-button" onclick="window.location.href='index.html'">Home</button>
+    <br>
     <form action="queryForm" id="queryForm">
-      <a href="#" class="nav-link" id="scrollToTopLink">Top</a>
-      <button onclick="window.location.href='index.html'">Login</button>
+      <!-- <a href="#" class="nav-link" id="scrollToTopLink">Top</a> -->
+      <button id="search-button" type="submit" value="Search">Search</button>
       <input type="text" name="categoryInput" id="categoryInput" placeholder="Category">
       <input type="text" name="countryInput" id="countryInput" placeholder="Country">
       <label for="languageInput">
-        <select id="languageInput">
+        <select id="languageInput" class="input-field">
           <option value="">All</option>
           <option value="ar">Arabic</option>
           <option value="de">German</option>
@@ -31,16 +31,24 @@
           <option value="es">Spanish</option>
         </select>
         <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
-        <input type="submit" value="Search">
-    </form>
+      </form>
+      <br>
   </div>
   <br>
   <div class="padding">
     <main id="main">
-      <div id="return-to-page-message"></div>
+      
+    
     </main>
   </div>
   <script defer src="newsfeed.js"></script>
+  <script defer src="./countries.js"></script>
 </body>
+<footer>
+  <video width="640" height="240" controls>
+    <source src="./assets/ad.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</footer>
 
 </html>
