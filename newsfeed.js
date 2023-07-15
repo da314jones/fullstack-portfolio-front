@@ -1,7 +1,8 @@
 const NEWSAPI_URL =
   "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
 const API_KEY = "a9c241399e2d4b609fac5b8b2b293684";
-const main = document.querySelector("main");
+const panelMain = document.querySelector(".panel-container");
+
 let rotateInterval;
 const createQueryUrl = (params) => {
   const queryString = new URLSearchParams(params).toString();
@@ -53,8 +54,8 @@ const showNews = (sources) => {
   }
 
   const sortedSources = sources.sort((a, b) => a.name.localeCompare(b.name));
-
-  main.innerHTML = "";
+  
+  panelMain.innerHTML = "";
 
   sortedSources.forEach((source, index) => {
     const panel = document.createElement("div");
@@ -92,8 +93,9 @@ const showNews = (sources) => {
     category.textContent = source.category.toUpperCase();
     panel.appendChild(category);
 
-    main.appendChild(panel);
+    panelMain.appendChild(panel);
   });
+
   const categoryElement = document.querySelector(".panel-category");
 
   const category = categoryElement.textContent;

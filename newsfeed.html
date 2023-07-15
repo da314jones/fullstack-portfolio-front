@@ -10,20 +10,24 @@
 </head>
 
 <body class="parent">
+  <br>
+  <div class="logo">
   <header class="div1">
     <img src="./assets/jones_journal.png" alt="Jones Journal Logo">
   </header>
-  <br>
+</div>
+<br>
+  <section class="centered">
+    <br>
   <div class="div2">
-    <button class="round-button" onclick="window.location.href='index.html'">Home</button>
     <br>
     <form action="queryForm" id="queryForm">
-      <!-- <a href="#" class="nav-link" id="scrollToTopLink">Top</a> -->
-      <button id="search-button" type="submit" value="Search">Search</button>
+      <a href="#" class="nav-link" id="scrollToTopLink">Top</a>
+      <button onclick="window.location.href='index.html'">Login</button>
       <input type="text" name="categoryInput" id="categoryInput" placeholder="Category">
       <input type="text" name="countryInput" id="countryInput" placeholder="Country">
       <label for="languageInput">
-        <select id="languageInput" class="input-field">
+        <select id="languageInput">
           <option value="">All</option>
           <option value="ar">Arabic</option>
           <option value="de">German</option>
@@ -31,24 +35,59 @@
           <option value="es">Spanish</option>
         </select>
         <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
-      </form>
-      <br>
+        <input type="submit" value="Search">
+    </form>
+    <br>
   </div>
   <br>
+  
   <div class="padding">
     <main id="main">
-      
-    
+      <div id="panelMain" class="panel-container"></div>
     </main>
+    <br>
+    <div class="right-div">
+      <h2>Lorem ipsum dolor</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cumque hic libero. Perspiciatis veritatis deleniti at! Asperiores incidunt consectetur fuga nisi magni deleniti, vitae illo, illum aperiam aspernatur consequatur! Exercitationem.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, ut consequatur. Necessitatibus mollitia quas voluptates? Architecto eos fugiat, id dicta voluptatum tempora natus, aut nobis sunt voluptas magni in minima?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo dolore voluptates ipsa porro ullam saepe nostrum, exercitationem recusandae sed, inventore facere corrupti veritatis illum optio cum et. Veritatis, iure!</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>    
+    </div>
+    <div id="return-to-page-message"></div>
+    <br>
+            <div class="bottom-div">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita placeat sequi aut nobis autem doloribus sunt ex laborum hic eveniet, sit molestias vitae aspernatur voluptates voluptas! Accusantium qui vitae eum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerata dipisicing elit Aliasad ipisicing elit alias.</p>
+            </div>
+            <br>
+    <div class="center-div">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerat.</p>
+            </div>
+    <br>
+            <div class="video-div">
+                <br>
+                <video width="320" height="240" controls>
+                    <source src="./assets/ad.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
   </div>
+                    <br>
+
+              </div>
+
+              <br>
+
+          </div>
+
+          <br>
+
+  </section>
+  <script defer src="countries.js"></script>
   <script defer src="newsfeed.js"></script>
-  <script defer src="./countries.js"></script>
 </body>
-<footer>
-  <video width="640" height="240" controls>
-    <source src="./assets/ad.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-</footer>
 
 </html>
