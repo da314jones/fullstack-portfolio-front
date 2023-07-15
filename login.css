@@ -58,6 +58,7 @@ main {
 
 .round-button:hover {
   background-color: #ee3124;
+  cursor: pointer;
 }
 
 input[type="text"],

@@ -21,9 +21,9 @@
     <br>
   <div class="div2">
     <br>
-    <form action="queryForm" id="queryForm">
-      <a href="#" class="nav-link" id="scrollToTopLink">Top</a>
-      <button onclick="window.location.href='index.html'">Login</button>
+    <form action="queryForm" id="queryForm" class="queryForm">
+      <button onclick="window.location.href='index.html'" class="home">Home</button>
+      <input type="submit" class="submit" value="Search">
       <input type="text" name="categoryInput" id="categoryInput" placeholder="Category">
       <input type="text" name="countryInput" id="countryInput" placeholder="Country">
       <label for="languageInput">
@@ -35,59 +35,52 @@
           <option value="es">Spanish</option>
         </select>
         <input type="text" name="nameInput" id="nameInput" placeholder="ABC, Al Jazeera English...">
-        <input type="submit" value="Search">
-    </form>
-    <br>
-  </div>
-  <br>
-  
-  <div class="padding">
-    <main id="main">
-      <div id="panelMain" class="panel-container"></div>
-    </main>
-    <br>
-    <div class="right-div">
-      <h2>Lorem ipsum dolor</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cumque hic libero. Perspiciatis veritatis deleniti at! Asperiores incidunt consectetur fuga nisi magni deleniti, vitae illo, illum aperiam aspernatur consequatur! Exercitationem.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, ut consequatur. Necessitatibus mollitia quas voluptates? Architecto eos fugiat, id dicta voluptatum tempora natus, aut nobis sunt voluptas magni in minima?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo dolore voluptates ipsa porro ullam saepe nostrum, exercitationem recusandae sed, inventore facere corrupti veritatis illum optio cum et. Veritatis, iure!</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>    
+      </form>
+      <br>
     </div>
-    <div id="return-to-page-message"></div>
     <br>
-            <div class="bottom-div">
-                <h2>Lorem ipsum</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita placeat sequi aut nobis autem doloribus sunt ex laborum hic eveniet, sit molestias vitae aspernatur voluptates voluptas! Accusantium qui vitae eum?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerata dipisicing elit Aliasad ipisicing elit alias.</p>
-            </div>
-            <br>
-    <div class="center-div">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerat.</p>
-            </div>
+    <div class="padding">
+      <main id="main">
+        <div id="panelMain" class="panel-container"></div>
+      </main>
+      <br>
+      <div class="right-div">
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cumque hic libero. Perspiciatis veritatis deleniti at! Asperiores incidunt consectetur fuga nisi magni deleniti, vitae illo, illum aperiam aspernatur consequatur! Exercitationem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, ut consequatur. Necessitatibus mollitia quas voluptates? Architecto eos fugiat, id dicta voluptatum tempora natus, aut nobis sunt voluptas magni in minima?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo dolore voluptates ipsa porro ullam saepe nostrum, exercitationem recusandae sed, inventore facere corrupti veritatis illum optio cum et. Veritatis, iure!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur neque dolor nostrum repellendus, aperiam reiciendis reiciendis.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>    
+      </div>
+      <div id="return-to-page-message"></div>
+      <br>
+      <div class="bottom-div">
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita placeat sequi aut nobis autem doloribus sunt ex laborum hic eveniet, sit molestias vitae aspernatur voluptates voluptas! Accusantium qui vitae eum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerata dipisicing elit Aliasad ipisicing elit alias.</p>
+      </div>
+      <br>
+      <div class="center-div">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsa modi itaque quibusdam maiores, optio totam! Quaerat.</p>
+      </div>
+      <br>
+      <div class="video-div">
+        <br>
+        <video width="320" height="240" controls>
+          <source src="./assets/ad.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <br>
+    </div>
     <br>
-            <div class="video-div">
-                <br>
-                <video width="320" height="240" controls>
-                    <source src="./assets/ad.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-  </div>
-                    <br>
-
-              </div>
-
-              <br>
-
-          </div>
-
-          <br>
-
   </section>
+  <br>
   <script defer src="countries.js"></script>
   <script defer src="newsfeed.js"></script>
 </body>
 
 </html>
+<!-- <a href="#" class="nav-link" id="scrollToTopLink">Top</a> -->

@@ -1,56 +1,54 @@
 .div1 {
-    align-items: center;
-    background-color: rgb(28, 43, 43);
-    display: flex;
-    grid-area: 1 / 1 / 2 / 4;
-    height: 80px;
-    text-align: center;
-    width: 100%;
-    }
-    
-    .div1 img {
-    height: 70%;
-    margin-left: 20px;
-    }
+  align-items: center;
+  background-color: rgb(28, 43, 43);
+  display: flex;
+  grid-area: 1 / 1 / 2 / 4;
+  height: 80px;
+  text-align: center;
+  width: 100%;
+}
+
+.div1 img {
+  height: 70%;
+  margin-left: 20px;
+}
 
 .flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .right-div {
-    width: 20%;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 0px;
-    margin-right: 350px;
-  }
-  
-  main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.right-div {
+  width: 20%;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 350px;
+}
+
+main {
   perspective: 1000px;
   display: flex;
   flex-wrap: wrap;
   max-width: 70%;
   margin: 20px auto;
-  }
-  
- 
-  
-  .div2 {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  #nameInput {
+}
+
+.div2 {
+  width: fit-content;
+  margin: 0 auto;
+}
+#nameInput {
   width: 27%;
-  }
-  
-  .panel-container {
-    margin-left: 220px;
-  }
-  
-  .panel {
+}
+
+.panel-container {
+  margin-left: 220px;
+}
+
+.panel {
   position: absolute;
   transform: rotate(0deg);
   opacity: 1;
@@ -67,33 +65,33 @@
   margin-left: -255px;
   margin-right: 0px;
   background-color: rgb(173, 216, 230);
-  }
-  
-  .panel:hover {
+}
+
+.panel:hover {
   box-shadow: 0px 30px 60px -5px rgba(0, 0, 0, 0.75);
-  }
-  
-  .panel-title {
+}
+
+.panel-title {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 5px;
   text-decoration: underline;
   padding: 5px;
-  }
-  
-  .panel-country {
+}
+
+.panel-country {
   font-size: 1em;
   color: rgb(84, 81, 81);
   margin-bottom: 5px;
-  }
-  
-  .panel-language {
+}
+
+.panel-language {
   font-size: 0.8em;
   color: rgb(84, 81, 81);
   margin-bottom: 15px;
-  }
-  
-  .panel-description {
+}
+
+.panel-description {
   font-size: 0.9em;
   color: #491010;
   margin-bottom: 10px;
@@ -102,43 +100,43 @@
   font-weight: bold;
   font-size: 20px;
   text-decoration: underline;
-  }
-  
-  .panel-category {
+}
+
+.panel-category {
   font-size: 0.9em;
   color: rgb(84, 81, 81);
   margin-bottom: 10px;
-  }
-  
-  .business {
-    color: blue;
-  }
-  
-  .entertainment {
-    color: yellow;
-  }
-  
-  .general {
-    color: black;
-  }
-  
-  .health {
-    color: cyan;
-  }
-  
-  .science {
-    color: green;
-  }
-  
-  .sports {
-    color: red;
-  }
-  
-  .technology {
-    color: rgb(25, 98, 98);
-  }
-  
-  .panel-link {
+}
+
+.business {
+  color: blue;
+}
+
+.entertainment {
+  color: yellow;
+}
+
+.general {
+  color: black;
+}
+
+.health {
+  color: cyan;
+}
+
+.science {
+  color: green;
+}
+
+.sports {
+  color: red;
+}
+
+.technology {
+  color: rgb(25, 98, 98);
+}
+
+.panel-link {
   font-size: 0.9em;
   text-decoration: none;
   color: #491010;
@@ -149,28 +147,57 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: translateY(-3px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
-  }
-  
-  .form {
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .width {
-    min-width: 190px;
-    flex-grow: 1;
-  }
-  
-  .round-button {
+}
+
+.div2 {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.div2 input[type="text"],
+.div2 select {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 200px;
+  margin: 5px;
+
+}
+
+.div2 input[input="submit"] {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+}
+
+form {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.width {
+  min-width: 190px;
+  flex-grow: 1;
+}
+
+.round-button {
   margin-right: 10px;
   background-image: (".");
-  }
-  
-  .round-button,
-  #search-button {
+}
+
+.home {
+  position: relative;
+  right: 20px;
+
+}
+
+.home,
+.submit {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -182,55 +209,173 @@
   font-size: 13px;
   line-height: 50px;
   transition: background-color 0.3s;
-  margin-left: 20px;
-  }
-  
-  .round-button:hover {
+  margin: 5px;
+
+}
+
+.submit {
+  position: relative;
+  right: 5px;
+}
+
+.home,
+.submit:hover {
+  background-color: rgb(19, 30, 30);
+}
+
+.round-button:hover {
   background-color: #ee3124;
-  }
-  
-  input[type="text"],
-  .input-field {
+}
+
+
+input[type="text"],
+.input-field,
+select {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   transition: border-color 0.3s ease;
+}
+
+#nameInput {
+  width: 200px;
+}
+
+.home:hover,
+.submit:hover {
+  background-color: #ff0000;
+  color: #fff;
+  cursor: pointer;
+
+}
+
+footer video {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  right: 43%;
+  padding-bottom: 10px;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.bottom-div {
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  bottom: 10px;
+  left: 380px;
+  padding: 5px;
+}
+
+.center-div {
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  bottom: 230px;
+  left: 673px;
+  padding: 5px;
+}
+
+.business {
+  color: blue;
+}
+
+.entertainment {
+  color: yellow;
+}
+
+.general {
+  color: black;
+}
+
+.health {
+  color: cyan;
+}
+
+.science {
+  color: green;
+}
+
+.sports {
+  color: red;
+}
+
+.technology {
+  color: rgb(25, 98, 98);
+}
+
+
+.div2 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.div1 {
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .div2 {
+    margin-top: 10px;
+  }
+
+  .div1 {
+    text-align: left;
+  }
+ 
+  
+  @media (max-width: 767px) {
+    .home {
+      right: auto;
+    }
   }
   
-  #search-button:hover {
-    background-color: #ff0000;
-    color: #fff;
-  }
-  
-  footer video {
+  .div2 form {
+    width: fit-content;
+    margin: 0 auto;
     display: flex;
-    position: absolute;
-    bottom: 0px;
-    right: 43%;
-    padding-bottom: 10px;
-    margin-top: 5px;
-    padding-top: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
-  
-  .bottom-div {
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    position: absolute;
-    width: 250px;
-    height: 300px;
-    bottom: 10px;
-    left: 380px;
-    padding: 5px;
+
+  .div2 input[type="text"],
+  .div2 select {
+    flex: 1 1 100%;
+    margin: 5px;
+    max-width: none;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+
+  .div2 input[type="submit"] {
+    order: -1;
+    margin-top: 10px;
   }
-  
-  .center-div {
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    position: absolute;
-    width: 300px;
-    height: 80px;
-    bottom: 230px;
-    left: 673px;
-    padding: 5px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 989px) {
+  .div2 {
+    margin-top: 15px;
+  }
+
+  .div1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 990px) {
+  .div2 {
+    margin-top: 20px;
+  }
+
+  .div1 {
+    text-align: center;
+  }
+}
