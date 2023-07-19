@@ -57,7 +57,8 @@ const getFullCountryName = (countryCode) => {
     'vn': 'Vietnam'
   };
 
-  return countries[countryCode.toLowerCase()] || countryCode;
+  const countryName = countries[countryCode.toLowerCase()] || countryCode;
+  return countryName.toUpperCase();
 };
 
 

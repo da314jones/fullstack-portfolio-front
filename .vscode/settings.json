@@ -3,5 +3,6 @@
         "Jazeera",
         "NEWSAPI",
         "newsfeed"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

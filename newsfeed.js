@@ -1,11 +1,10 @@
-const NEWSAPI_URL =
-  "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
+const NEWSAPI_URL = "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
 const API_KEY = "a9c241399e2d4b609fac5b8b2b293684";
 const panelMain = document.querySelector(".panel-container");
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM Loaded");
-  fetchNews();
+  fetchNews(NEWSAPI_URL);
 });
 
 document.getElementById("queryForm").addEventListener("submit", function (e) {
@@ -27,17 +26,62 @@ document.getElementById("queryForm").addEventListener("submit", function (e) {
   fetchNews(queryUrl);
 });
 
-const fetchNews = (url = NEWSAPI_URL) => {
+function createQueryUrl(queryParameters) {
+  const params = new URLSearchParams(queryParameters).toString();
+  return `${NEWSAPI_URL}&${params}`;
+}
+
+const fetchNews = (url) => {
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       console.log(data);
-      showNews(data.sources);
-      document.getElementById("queryForm").reset();
+      if(data.status === 'ok'){
+        showNews(data.sources);
+        document.getElementById("queryForm").reset();
+      } else {
+        throw new Error(data.message);
+      }
     })
     .catch((error) => {
       showError(error);
     });
+};
+
+const showNews = (sources) => {
+  if (!sources || sources.length === 0) {
+    panelMain.innerHTML = "<p>No sources found</p>";
+    console.log("No sources to show");
+    return;
+  }
+
+  let panel = "";
+  
+  for (let i = 0; i < sources.length; i++) {
+    const category = sources[i].category;
+    const color = getCategoryColor(category.toUpperCase()) || "blue";
+    
+    panel += `
+      <div class="card-stack" style="animation-delay: ${i * .2}s;">
+        <div class="card card-${i + 1}" style="border-color: ${color}">
+          <h3>${sources[i].name}</h3>
+          <p>${sources[i].description}</p>
+          <p class="category ${category.toUpperCase()}">${category.toUpperCase()}</p>
+          <p>${sources[i].language.toUpperCase()}</p>
+          <p>${sources[i].country.toUpperCase()}</p>
+          <a href="${sources[i].url}" target="_self">${sources[i].url}</a>
+        </div>
+      </div>
+    `;
+  }
+  panelMain.innerHTML = panel;
+
+ setTimeout(addAnimationToCards, 1000);
 };
 
 const getCategoryColor = (category) => {
@@ -71,52 +115,12 @@ const getCategoryColor = (category) => {
   return color;
 };
 
-const showNews = (sources) => {
-  if (!sources) {
-    console.log("No sources to show");
-    return;
-  }
-
-  let panel = "";
-  const categoryColors = {
-    BUSINESS: "green",
-    ENTERTAINMENT: "yellow",
-    GENERAL: "black",
-    HEALTH: "blue",
-    SCIENCE: "orange",
-    SPORTS: "red",
-    TECHNOLOGY: "purple",
-  };
-
-  for (let i = 0; i < sources.length; i++) {
-    const category = sources[i].category;
-    const color = getCategoryColor[category] || "blue";
-    
-    panel += `
-      <div class="card-stack" style="animation-delay: ${i * .2}s;">
-        <div class="card card-${i + 1}">
-          <h3>${sources[i].name}</h3>
-          <p>${sources[i].description}</p>
-          <p class="category ${sources[i].category.toUpperCase()}">${sources[i].category.toUpperCase()}</p>
-          <p>${sources[i].language.toUpperCase()}</p>
-          <p>${getFullCountryName(sources[i].country)}</p>
-          <a href="${sources[i].url}" target="_self">${sources[i].url}</a>
-        </div>
-      </div>
-    `;
-  }
-  panelMain.innerHTML = panel;
-
- setTimeout(addAnimationToCards, 1000);
-};
-
 const addAnimationToCards = () => {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card, index) => {
     card.style.animation = `fadeAway ${cards.length * 2}s infinite ${index * 2}s`;
   });
 };
-
 
 const openInSameTab = (e) => {
   e.preventDefault();

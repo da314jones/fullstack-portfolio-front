@@ -1,5 +1,6 @@
-# News? ...anyWhere!
-**News? ...anyWhere! is a web application that allows you to browse and search for news from various sources. Stay updated with the latest news across different categories, countries, and languages.**
+# JONES JOURNAL
+
+**JONES JOURNAL is a web application that allows you to browse and search for news from various sources. Stay updated with the latest news across different categories, countries, and languages.**
 
 ## Getting Started
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
