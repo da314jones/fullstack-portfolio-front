@@ -61,5 +61,33 @@ const getFullCountryName = (countryCode) => {
   return countryName.toUpperCase();
 };
 
-
+window.onload = function() {
+  var myVideo = document.getElementById("ad");
+  myVideo.play();
+}
   
+const openInSameTab = (e) => {
+  e.preventDefault();
+  window.open(e.target.href, "_self");
+};
+
+const getCategoryColor = (category) => {
+  switch (category) {
+    case 'BUSINESS':
+      return 'blue';
+    case 'ENTERTAINMENT':
+      return 'red';
+    case 'GENERAL':
+      return 'green';
+    case 'HEALTH':
+      return 'yellow';
+    case 'SCIENCE':
+      return 'purple';
+    case 'SPORTS':
+      return 'orange';
+    case 'TECHNOLOGY':
+      return 'gray';
+    default:
+      return 'black';
+  }
+};

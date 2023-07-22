@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-    <link rel="stylesheet" href="newsfeed.css" />
-  </head>
-
-  <body class="parent">
-    <br />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jones Journal</title>
+<link rel="stylesheet" href="./newsfeed.css"></head>
+<body class="parent">
+    <br>
     <div class="logo">
-      <header class="div1">
-        <img src="./assets/jones_journal.png" alt="Jones Journal Logo" />
-      </header>
+        <header class="div1">
+            <img src="./assets/jones_journal.png" alt="Jones Journal Logo"/>
+        </header>
     </div>
-    <br />
+    <br>
     <section class="centered">
-      <div class="div2">
-        <form action="queryForm" id="queryForm" class="queryForm">
-          <button onclick="window.location.href='index.html'" class="home">
-            Home
-          </button>
-          <input type="submit" name="submit" class="submit" value="Search"/>
-          <input
-            type="text"
-            name="categoryInput"
-            id="categoryInput"
-            placeholder="Category"
-          />
-          <input
-            type="text"
-            name="countryInput"
-            id="countryInput"
-            placeholder="Country"
-          />
-          <label for="languageInput">
-            <select id="languageInput">
-              <option value="">All</option>
+        <div class="div2">
+    <form id="queryForm" class="queryForm">
+        <button onclick="window.location.href='index.html'" class="home">Home</button>
+
+        <button type="submit" name="submit" class="submit" value="Search">Search</button>
+        <label for="languageInput">
+          <select id="languageInput">
+              <option value="">All Languages</option>
               <option value="ar">Arabic</option>
-              <option value="de">German</option>
+              <option value="zh">Chinese</option>
+              <option value="nl">Dutch</option>
               <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+              <option value="he">Hebrew</option>
+              <option value="it">Italian</option>
+              <option value="se">Northern Sami</option>
+              <option value="no">Norwegian</option>
+              <option value="pt">Portuguese</option>
+              <option value="ru">Russian</option>
               <option value="es">Spanish</option>
-            </select>
+          </select>
           </label>
-          <input
-            type="text"
-            name="nameInput"
-            id="nameInput"
-            placeholder="ABC, Al Jazeera English..."
-          />
-        </form>
-      </div>
-      <div class="padding">
+        <input type="text" id="categoryInput" name="categoryInput" placeholder="Enter category">
+        
+        <input type="text" id="countryInput" name="countryInput" placeholder="Enter country">
+        
+        
+        <input type="text" name="nameInput" id="nameInput"  placeholder="Enter news agency name">
+    </form>
+</div>
+    <div class="padding">
         <main id="main">
-          <div id="panelMain" class="panel-container"></div>
-          <div class="bottom-div">
-            <h2>Lorem ipsum</h2>
+    <div id="panelMain" class="panel-container">
+      <!-- News panels will be inserted here -->
+    </div>
+    <div class="bottom-div">
+        <h2>Lorem ipsum</h2>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
               placeat sequi aut nobis autem doloribus sunt ex laborum hic
@@ -72,51 +67,60 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Aspernatur neque dolor nostrum repellendus.
             </p>
-          </div>
-          <div class="video-div">
-            <video width="320" height="240" controls>
-              <source src="./assets/ad.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="right-div">
-            <p>
-              <h2>Consectetur adipisicing</h2> sit amet  elit. Alias lorem ipsum dolor
-              ipsa modi itaque quibusdam maiores, optio totam! Quaerat.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium cumque hic libero. Perspiciatis veritatis deleniti at!
-              Asperiores incidunt consectetur fuga nisi magni deleniti, vitae
-              illo, illum aperiam aspernatur consequatur! Exercitationem.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Aspernatur, ut consequatur. Necessitatibus mollitia quas
-              voluptates? Architecto eos fugiat, id dicta voluptatum tempora
-              <h2>Lorem ipsum dolor</h2>
-              natus, aut nobis sunt voluptas magni in minima?
-            </p>
+    </div>
+    <div class="video-div">
+        <video id="ad" width="320" height="240" controls>
+            <source src="./assets/ad.mp4" type="video/mp4" autoplay muted loop playsinline/>
+            Your browser does not support the video tag.
+          </video>
+    </div>
+    <div class="right-div">
+        <p>
+            <h2>Consectetur adipisicing</h2> sit amet  elit. Alias lorem ipsum dolor
+            ipsa modi itaque quibusdam maiores, optio totam! Quaerat.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Praesentium cumque hic libero. Perspiciatis veritatis deleniti at!
+            Asperiores incidunt consectetur fuga nisi magni deleniti, vitae
+            illo, illum aperiam aspernatur consequatur! Exercitationem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Aspernatur, ut consequatur. Necessitatibus mollitia quas
+            voluptates? Architecto eos fugiat, id dicta voluptatum tempora
+            <h2>Lorem ipsum dolor</h2>
+            natus, aut nobis sunt voluptas magni in minima?
+          </p>
 
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur neque dolor nostrum repellendus, aperiam reiciendis
-              reiciendis.
-            </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur neque dolor nostrum repellendus, aperiam reiciendis
-              reiciendis. Lorem, ipsum dolor sit amet consectetur adipisicing elit .</p>
-          </div>
-        </main>
-        <div class="filler">
-          <img src="./assets/brypark3-1024x635.jpg">
-        </div>
-      </div>
-      <br />
-    </section>
-    <br />
-    <script defer src="countries.js"></script>
-    <script defer src="newsfeed.js"></script>
-  </body>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Aspernatur neque dolor nostrum repellendus, aperiam reiciendis
+            reiciendis.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Aspernatur neque dolor nostrum repellendus, aperiam reiciendis
+            reiciendis. Lorem, ipsum dolor sit amet consectetur adipisicing elit .</p>
+    </div>
+    </main>
+    <div class="filler2">
+        <img src="./assets/hells-Kitchen.jpeg">
+    </div>
+    <div class="filler1">
+        <img src="./assets/brypark3-1024x635.jpg">
+    </div>
+</div>
+<br>
+</section>
+<br>
+  <script src="./countries.js"></script>
+  <script src="./newsfeed.js"></script>
+  <script>
+    window.onload = function() {
+        var myVideo = document.getElementById("ad");
+        myVideo.play();
+    };
+    </script>
+</body>
 </html>

@@ -1,37 +1,33 @@
-const NEWSAPI_URL = "https://newsapi.org/v2/sources?apiKey=a9c241399e2d4b609fac5b8b2b293684";
-const API_KEY = "a9c241399e2d4b609fac5b8b2b293684";
+const API_KEY = "735d3091c04e4afeb2b5e4ec0cde4810";
 const panelMain = document.querySelector(".panel-container");
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM Loaded");
-  fetchNews(NEWSAPI_URL);
-});
-
-document.getElementById("queryForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
+const getApiUrl = () => {
   const category = document.getElementById("categoryInput").value;
   const country = document.getElementById("countryInput").value;
   const language = document.getElementById("languageInput").value;
 
-  const queryParameters = {
-    apiKey: API_KEY,
-    category: category,
-    country: country,
-    language: language,
-  };
+  let apiUrl = `https://newsapi.org/v2/sources?apiKey=${API_KEY}`;
+  if (category) apiUrl += `&category=${category}`;
+  if (country) apiUrl += `&country=${country}`;
+  if (language) apiUrl += `&language=${language}`;
 
-  const queryUrl = createQueryUrl(queryParameters);
+  return apiUrl;
+};
 
-  fetchNews(queryUrl);
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM Loaded");
+  fetchNews(getApiUrl());
 });
 
-function createQueryUrl(queryParameters) {
-  const params = new URLSearchParams(queryParameters).toString();
-  return `${NEWSAPI_URL}&${params}`;
-}
+document.getElementById("queryForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const apiUrl = getApiUrl();
+  const affiliate = document.getElementById("nameInput").value.toLowerCase();
+  
+  fetchNews(apiUrl, affiliate);
+});
 
-const fetchNews = (url) => {
+const fetchNews = (url, affiliateName) => {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -40,9 +36,12 @@ const fetchNews = (url) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-      if(data.status === 'ok'){
-        showNews(data.sources);
+      if (data.status === 'ok') {
+        let sources = data.sources;
+        if (affiliateName) {
+          sources = sources.filter(source => source.name.toLowerCase().includes(affiliateName));
+        }
+        showNews(sources);
         document.getElementById("queryForm").reset();
       } else {
         throw new Error(data.message);
@@ -53,6 +52,8 @@ const fetchNews = (url) => {
     });
 };
 
+
+
 const showNews = (sources) => {
   if (!sources || sources.length === 0) {
     panelMain.innerHTML = "<p>No sources found</p>";
@@ -61,13 +62,13 @@ const showNews = (sources) => {
   }
 
   let panel = "";
-  
+
   for (let i = 0; i < sources.length; i++) {
     const category = sources[i].category;
     const color = getCategoryColor(category.toUpperCase()) || "blue";
-    
+
     panel += `
-      <div class="card-stack" style="animation-delay: ${i * .2}s;">
+      <div class="card-stack" style="animation-delay: ${i * 0.2}s;">
         <div class="card card-${i + 1}" style="border-color: ${color}">
           <h3>${sources[i].name}</h3>
           <p>${sources[i].description}</p>
@@ -81,38 +82,7 @@ const showNews = (sources) => {
   }
   panelMain.innerHTML = panel;
 
- setTimeout(addAnimationToCards, 1000);
-};
-
-const getCategoryColor = (category) => {
-  let color = "";
-  switch (category) {
-    case "BUSINESS":
-      color = "blue";
-      break;
-    case "ENTERTAINMENT":
-      color = "yellow";
-      break;
-    case "GENERAL":
-      color = "black";
-      break;
-    case "HEALTH":
-      color = "cyan";
-      break;
-    case "SCIENCE":
-      color = "green";
-      break;
-    case "SPORTS":
-      color = "red";
-      break;
-    case "TECHNOLOGY":
-      color = "rgb(25, 98, 98)";
-      break;
-    default:
-      color = "gray";
-      break;
-  }
-  return color;
+  setTimeout(addAnimationToCards, 1000);
 };
 
 const addAnimationToCards = () => {
@@ -122,16 +92,11 @@ const addAnimationToCards = () => {
   });
 };
 
-const openInSameTab = (e) => {
-  e.preventDefault();
-  window.open(e.target.href, "_self");
-};
-
 const showError = (err) => {
-  main.innerHTML = `
+  panelMain.innerHTML = `
     <section class="error">
-    <p>An error has occurred!</p>
-    <p class="message">${err}</p>
+      <p>An error has occurred!</p>
+      <p class="message">${err}</p>
     </section>`;
 };
 
